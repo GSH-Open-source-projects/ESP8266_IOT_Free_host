@@ -1,6 +1,9 @@
 
 
 # ESP8266 Communication With Server and ESP8266
+[![enter image description here][7]][7]
+
+
 
 This is a version of [ESP8266 Communication With Server and ESP8266Hubot](https://www.instructables.com/id/ESP8266-Communication-With-Server-and-ESP8266/), which is designed to be deployed on [Heroku](http://www.heroku.com) with the The ESP8266 in Arduino IDE.
 
@@ -86,6 +89,8 @@ That button make these two file  **[datastrorage.txt and writefile.php]** in  yo
 #### Step 3: Testing the Server
 
 Now open another tab and type custom URL (for my heroku app is:[**http://gsh123.herokuapp.com/writefile.php?data=n**][5]!)  and replace “name” (written after ‘=’ character) with any other text (maybe your name) and press Enter. You will see message “SUCCESS. Data are written in the file." On the webpage. In case you do not get any message, make sure your PHP file does not have any error. Now open File URL in another tab and you will be able to see the contents of the file. You will be able to see your text, which you had written previously in the file. This is all.
+
+[![enter image description here][8]][8]
 
 #### Step 4: NODEMCU ESP8266 12e Board 
 
@@ -233,3 +238,6 @@ Other methods are self-explanatory and not have anything to discuss here. You ca
   [4]: https://id.heroku.com/
   [5]: http://gsh123.herokuapp.com/writefile.php?data=n
   [6]: hhttps://github.com/GSH-Open-source-projects/ESP8266_IOT_Free_host/blob/master/ESP8266_IOT_Free_host%20.ino
+  
+  [7]: https://i.stack.imgur.com/yHpwS.png
+  [8]: https://i.stack.imgur.com/e3QVs.png
