@@ -98,7 +98,7 @@ String receivelastmessage()
   if(WiFi.status()==WL_CONNECTED)
   {
     HTTPClient http;
-    String url="https://gsh123.herokuapp.com/datastorage.txt";
+    String url="http://gsh123.herokuapp.com/datastorage.txt";
     http.begin(url);
     http.addHeader("Content-Type","text/plain");
     int httpCode=http.GET();
@@ -189,7 +189,7 @@ int sendmessage(String d)
   if (WiFi.status()==WL_CONNECTED)
   {
     HTTPClient http;
-    String url="https://gsh123.herokuapp.com/writefile.php?data="+d;
+    String url="http://gsh123.herokuapp.com/writefile.php?data="+d;
     http.begin(url);
     http.addHeader("Content-Type","text/plain");
     int httpCode=http.GET();
