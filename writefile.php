@@ -5,14 +5,21 @@ $val = $_GET["data"];
 $timezone = date('m/d/Y h:i:s a', time());
 
 $fileContent="The current server timezone is: " . $timezone."\n".$val."\n";
-$path=getcwd()."\datastorage.txt";
-chmod($path, 0755); 
-if( !chmod($path, 0755) ) {
+$path=getcwd()."/datastorage.txt";
+
+if(!file_exists("Data_Dir")) {
+        mkdir($_SERVER['DOCUMENT_ROOT']."Data_Dir/" . $this->getUser() . "/" , "0777", true);     
+ }
+if(!file_exists("Data_Dir")) {
+   echo "Can not Make Data_Dir folder because of permission \n";
+}
+chmod($path, 0777); 
+if( !chmod($path, 0777) ) {
     // more code
    echo "Can not chang datastorage.txt file chmod permission \n";
-  echo getcwd();// will return the current file name only
+   echo getcwd();// will return the current file name only
 
-    $file=getcwd()."\datastorage1".".txt";
+    $file=getcwd()."/datastorage1".".txt";
     $fp = fopen($file, 'w');
     fwrite($fp, $content);
     fclose($fp);
