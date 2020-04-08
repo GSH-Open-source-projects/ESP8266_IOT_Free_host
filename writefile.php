@@ -1,12 +1,30 @@
-<?php
+ <?php
 
 $val = $_GET["data"];
 
 $timezone = date('m/d/Y h:i:s a', time());
 
 $fileContent="The current server timezone is: " . $timezone."\n".$val."\n";
+$path=getcwd()."\datastorage.txt";
+chmod($path, 0755); 
+if( !chmod($path, 0755) ) {
+    // more code
+   echo "Can not chang datastorage.txt file chmod permission \n";
+  echo getcwd();// will return the current file name only
 
-$fileStatus=file_put_contents("datastorage.txt",$fileContent,FILE_APPEND);
+    $file=getcwd()."\datastorage1".".txt";
+    $fp = fopen($file, 'w');
+    fwrite($fp, $content);
+    fclose($fp);
+
+    // Set perms with chmod()
+    chmod($file, 0777);
+     echo "Content saved in "."datastorage1".".txt file \n";
+
+  
+}
+
+$fileStatus=file_put_contents($path,$fileContent,FILE_APPEND);
 
 if($fileStatus != false)
 
@@ -14,7 +32,7 @@ if($fileStatus != false)
 
                 echo  "SUCCESS. Data written in file". "\n" . "The current server timezone is: " . $timezone;
 
-  $handle = @fopen("datastorage.txt", "r");
+  $handle = @fopen($path, "r");
 if ($handle) {
     while (($content = fgets($handle, 4096)) !== false) {
       echo "datastorage.txt file content is: \n";   
