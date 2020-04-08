@@ -1,6 +1,7 @@
 <?php
 
-$val = "data";
+$val = $_GET["data"];
+
 $timezone = date('m/d/Y h:i:s a', time());
 
 $fileContent="The current server timezone is: " . $timezone."\n".$val."\n";
