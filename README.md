@@ -123,7 +123,7 @@ String receivelastmessage()
 
     HTTPClient http;
 
-    String url="http://xyz.000webhostapp.com/datastorage.txt";
+    String url="http://gsh123.herokuapp.com/datastorage.txt";
 
     http.begin(url);
 
@@ -159,7 +159,7 @@ int sendmessage(String d)
 
     HTTPClient http;
 
-    String url="http://xyz.000webhostapp.com/writefile.php?data="+d;
+    String url="http://gsh123.herokuapp.com/writefile.php?data="+d;
 
     http.begin(url);
 
