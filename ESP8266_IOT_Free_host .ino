@@ -5,16 +5,57 @@
 // Libraries 
 #include <ESP8266HTTPClient.h>
 #include<ESP8266WiFi.h>
+const char* ssid = "TP-LINK_4AD2"; 
+const char* password = "9155253009";
+#define WIFI_TX_POWER 20.5 //Limiting output power 0 - 20.5 dBm (Router setting = 20db)
 
 void setup()
 {
   Serial.begin(115200);
-  WiFi.begin(ssid,password);  // add ssid and password here
-
-  while(WiFi.status() !=WL_CONNECTED)
+  
+  
+  int n = WiFi.scanNetworks();
+  if (n == 0){
+    Serial.println("No networks found");}
+  else
   {
+    Serial.print(n);
+    Serial.println(" networks found");
+    Serial.println("-------------------------------");
+    for (int i = 0; i < n; ++i)
+    {
+      // Print SSID and RSSI for each network found
+      Serial.print(i + 1);
+      Serial.print(": ");
+      if (WiFi.encryptionType(i) == 2) Serial.print("WPA ");
+      if (WiFi.encryptionType(i) == 4) Serial.print("WPA2");
+      if (WiFi.encryptionType(i) == 5) Serial.print("WEP ");
+      if (WiFi.encryptionType(i) == 8) Serial.print("AUTO");
+      if (WiFi.encryptionType(i) == 7) Serial.print("OPEN");
+      Serial.print(" | ");
+      Serial.print(WiFi.SSID(i)); 
+      Serial.print(" | ");
+      Serial.print(WiFi.RSSI(i));
+      Serial.println("dBm");
+
+      delay(20);     
+     }
+    Serial.println("-------------------------------");
+    Serial.println("");
+    }
+  //end scan for all Networks
+
+  //SSID connection param
+  WiFi.setOutputPower(WIFI_TX_POWER);
+  WiFi.mode(WIFI_STA); //set mode to WIFI_AP, WIFI_STA, WIFI_AP_STA or WIFI_OFF.  
+  WiFi.hostname("ESP12-roomThermostat");
+  WiFi.begin(ssid, password);
+
+  
+
+  while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.println("Waiting for connection");
+    Serial.print(".");
   }
   
   Serial.println("Connected...");
