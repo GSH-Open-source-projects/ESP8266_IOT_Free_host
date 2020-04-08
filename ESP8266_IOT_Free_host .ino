@@ -5,8 +5,8 @@
 // Libraries 
 #include <ESP8266HTTPClient.h>
 #include<ESP8266WiFi.h>
-const char* ssid = "TP-LINK_4AD2"; 
-const char* password = "9155253009";
+const char* ssid = "TP-LINK_4AD2"; // Your-Wifi Modem SSID
+const char* password = "9155253009"; // Your-Wifi Modem Password
 #define WIFI_TX_POWER 20.5 //Limiting output power 0 - 20.5 dBm (Router setting = 20db)
 
 void setup()
