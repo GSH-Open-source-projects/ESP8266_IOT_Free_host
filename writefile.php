@@ -17,8 +17,8 @@ if($fileStatus != false)
   $handle = @fopen("datastorage.txt", "r");
 if ($handle) {
     while (($content = fgets($handle, 4096)) !== false) {
-      echo "datastorage.txt file content ois: \n";   
-      echo $content;
+      echo "datastorage.txt file content is: \n";   
+      echo $content." \n";
     }
     if (!feof($handle)) {
       echo "Can not open datastorage.txt file \n";  
