@@ -45,7 +45,7 @@ Custom URL to write data in the file will be http://gsh123.herokuapp.com/writefi
 To deploy the below php coddes to your = own **[Heroku Account][4]**, just click the button below:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/GSH-Open-source-projects/ESP8266_IOT_Free_host)
-
+[![enter image description here][9]][9]
 
 Now PHP script to append data to file with name "writefile.php"
 
@@ -222,6 +222,8 @@ Other methods are self-explanatory and not have anything to discuss here. You ca
 
 
 
+[![enter image description here][10]][10]
+
 ## License
 
 [MIT](./LICENSE), just like the upstream [Hubot license](https://github.com/github/hubot/blob/master/LICENSE), so go :nut_and_bolt:s.
@@ -240,3 +242,6 @@ Other methods are self-explanatory and not have anything to discuss here. You ca
   [6]: https://github.com/GSH-Open-source-projects/ESP8266_IOT_Free_host/blob/master/ESP8266_IOT_Free_host%20.ino  
   [8]: https://i.stack.imgur.com/yHpwS.png
   [7]: https://i.stack.imgur.com/e3QVs.png
+  [8]: https://i.stack.imgur.com/e3QVs.png
+  [9]: https://i.stack.imgur.com/osZni.png
+  [10]: https://i.stack.imgur.com/Ru4ye.png
