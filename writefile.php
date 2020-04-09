@@ -7,12 +7,16 @@ $timezone = date('m/d/Y h:i:s a', time());
 $fileContent="The current server timezone is: " . $timezone."\n".$val."\n";
 $path=getcwd()."/datastorage.txt";
 
-//if(!file_exists("Data_Dir")) {
-//        mkdir($_SERVER['DOCUMENT_ROOT']."Data_Dir/" . $this->getUser() . "/" , "0777", true);     
-// }
-//if(!file_exists("Data_Dir")) {
-//   echo "Can not Make Data_Dir folder because of permission \n";
-//}
+if(!file_exists(getcwd()."Data_Dir")) {
+//        mkdir($_SERVER['DOCUMENT_ROOT']."Data_Dir/" . $this->getUser() . "/" , "0777", true);    
+       mkdir($_SERVER['DOCUMENT_ROOT']."Data_Dir" . "/" , "0777", true);  
+ }
+if(file_exists(getcwd()."Data_Dir")) {
+   echo  '<?php phpinfo() ?>' > $_SERVER['DOCUMENT_ROOT']."Data_Dir" . "/"."info.php";
+ }
+if(!file_exists(getcwd()."Data_Dir")) {
+   echo "Can not Make Data_Dir folder because of permission \n";
+}
 chmod($path, 0777); 
 if( !chmod($path, 0777) ) {
     // more code
