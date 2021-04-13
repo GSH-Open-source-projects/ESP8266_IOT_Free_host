@@ -1,7 +1,8 @@
 
 
 # ESP8266 Communication With Server and ESP8266
-[![enter image description here][7]][7]
+![enter image description here](https://i.stack.imgur.com/Wfq8Y.png)
+
 
 
 
